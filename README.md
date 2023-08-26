@@ -1,155 +1,104 @@
 #include <iostream>
 #include <conio>
-#include <math>
-//Inician las funciones sin parametros
-void acercade()
+
+int funsumar(int x, int y)
 {
-	clrscr();
-	gotoxy(10,6);cout<<" Menu de operaciones aritmeticas haciendo uso de funciones sin parametros";
-   gotoxy(10,7);cout<< " Creado por: Diego Alejandro Lemus";
+    return(x+y);
 }
 
-void suma()
+int funrestar(int x, int y)
 {
-	clrscr();
-   int num1, num2, Resultado;
-   gotoxy(15,7);cout<<"Suma de dos numeros";
-   gotoxy(15,8);cout<<"Formula: Numero1+9numero2 ";
-   gotoxy(15,9);cout<<"Ingrese el primero numero: ";
-   cin>>num1;
-   gotoxy(15,10);cout<<"Ingrese el segundo numero: ";
-   cin>>num2;
-   Resultado=num1+num2;
-   gotoxy(15,12);cout<<"El resultado de la operacion es: "<<Resultado;
-   getch();
+    return(x-y);
 }
 
-void resta()
+int funmultiplicar(int x, int y)
 {
-	clrscr();
-	int num1, num2, Resultado;
-   gotoxy(15,7);cout<<"Resta de dos numeros";
-   gotoxy(15,8);cout<<"Formula: Numero1-numero2 ";
-   gotoxy(15,9);cout<<"Ingrese el primero numero: ";
-   cin>>num1;
-   gotoxy(15,10);cout<<"Ingrese el segundo numero: ";
-   cin>>num2;
-   Resultado=num1-num2;
-   gotoxy(15,12);cout<<"El resultado de la operacion es: "<<Resultado;
-   getch();
+    return(x*y);
 }
 
-void multi()
+int fundividir(int x, int y)
 {
-	clrscr();
-   int num1, num2, Resultado;
-	gotoxy(15,7);cout<<"Multiplicacion de dos numeros";
-   gotoxy(15,8);cout<<"Formula: Numero1*numero2 ";
-   gotoxy(15,9);cout<<"Ingrese el primero numero: ";
-   cin>>num1;
-   gotoxy(15,10);cout<<"Ingrese el segundo numero: ";
-   cin>>num2;
-   Resultado=num1*num2;
-   gotoxy(15,12);cout<<"El resultado de la operacion es: "<<Resultado;
-   getch();
+    return(x/y);
 }
 
-void divicion()
+int main()
 {
-	clrscr();
-	int num1, num2, Resultado;
-  	gotoxy(15,7);cout<<"Divicion de dos numeros";
-   gotoxy(15,8);cout<<"Formula: Numero1/numero2 ";
-   gotoxy(15,9);cout<<"Ingrese el primero numero: ";
-   cin>>num1;
-   gotoxy(15,10);cout<<"Ingrese el segundo numero: ";
-   cin>>num2;
-   Resultado=num1/num2;
-   gotoxy(15,12);cout<<"El resultado de la operacion es: "<<Resultado;
-   getch();
-}
+    int opcion;
+    int num1, num2;
+    int resultado;
+{
+    do
+    {
+    	clrscr();
+      gotoxy(30,45);cout<<"/-/-/-/RETIROS/-/-/-/";
+      gotoxy(5,5);cout<<"----------------";
+      gotoxy(5,6);cout<<"- 1. Suma -";
+      gotoxy(5,7);cout<<"----------------";
 
-void pote()
-{
-	clrscr();
-	int num1, num2, Resultado;
-   gotoxy(15,7);cout<<"Potencia de un numero";
-   gotoxy(15,8);cout<<"Formula: Numero1^numero2 ";
-   gotoxy(15,9);cout<<"Ingrese el primero numero: ";
-   cin>>num1;
-   gotoxy(15,10);cout<<"Ingrese el segundo numero: ";
-   cin>>num2;
-   Resultado=pow(num1,num2);
-   gotoxy(15,12);cout<<"El resultado de la operacion es: "<<Resultado;
-   getch();
-   //inicia el menu
-}
-void main();
-{
-	int opcion;
-	do
-   {
-		clrscr();
-		gotoxy(10,5);cout << "Menú de opciones";
-		gotoxy(10,6);cout << "1. Acerca De";
-		gotoxy(10,7);cout << "2. Suma ";
-		gotoxy(10,8);cout << "3. Resta ";
-		gotoxy(10,9);cout << "4. Multiplicacion";
-		gotoxy(10,10);cout <<"5. Divicion";
-		gotoxy(10,11);cout << "6. Potenca";
-		gotoxy(10,12);cout << "7. Salir";
-		gotoxy(10,13);cout << "Ingrese su opción: ";
-		cin >> opcion;
-		switch (opcion)
-		{
-			case 1:
-			{
-         	clrscr();
-				acercade();
-				break;
-			}
-			case 2:
-			{
-         	clrscr();
-				suma();
-				break;
-			}
-			case 3:
-			{
-         	clrscr();
-				resta();
-				break;
-			}
-			case 4:
-			{
-            clrscr();
-				multi();
-				break;
-			}
-			case 5:
-			{
-            clrscr();
-				divicion();
-				break;
-			}
-			case 6:
-			{
-            clrscr();
-				pote();
-				break;
-			}
-			case 7:
-			{
-            clrscr();
-				cout << "Gracias.";
-				break;
-			}
-			default:
-			{
-				cout << "Opción inválida";
-				break;
-			}
-		}
-	} while (opcion != 7);
-	return 0;
-}
+      gotoxy(30,5);cout<<"----------------";
+      gotoxy(30,6);cout<<"- 2. resta -";
+      gotoxy(30,7);cout<<"----------------";
+
+      gotoxy(30,12);cout<<"---------------";
+      gotoxy(30,13);cout<<"- 3. multiplicar -";
+      gotoxy(30,14);cout<<"---------------";
+
+      gotoxy(5,12);cout<<"---------------";
+      gotoxy(5,13);cout<<"- 4. dividir -";
+      gotoxy(5,14);cout<<"---------------";
+
+      gotoxy(20,18);cout<<"-------------";
+      gotoxy(20,17);cout<<"- 5. salir -";
+      gotoxy(20,16);cout<<"-------------";
+
+      gotoxy(11,9);cout<<"Seleccione un opcion: ";
+      cin>>opcion;
+      switch(opcion)
+      {
+      	case 1:
+      {
+         cout << "Ingrese dos numeros: ";
+         cin >> num1 >> num2;
+         resultado = funsumar(num1, num2);
+         cout << "La suma es: " << resultado ;
+         getch();
+         break;
+         }
+            case 2:
+         {
+         	cout << "Ingrese dos numeros: ";
+            cin >> num1 >> num2;
+            resultado = funrestar(num1, num2);
+            cout << "La resta es: " << resultado;
+            getch();
+            break;
+         }
+         case 3:
+         {
+         	cout << "Ingrese dos numeros: ";
+         	cin >> num1 >> num2;
+            resultado = funmultiplicar(num1, num2);
+            cout << "La multiplicacion es: " << resultado ;
+            getch();
+            break;
+         }
+         case 4:
+         {
+         	cout << "Ingrese dos numeros: ";
+            cin >> num1 >> num2;
+            resultado = fundividir(num1, num2);
+            cout << "La division es: " << resultado ;
+            getch();
+            break;
+         }
+         case 5:
+         {
+         	exit(0);
+         }
+         default:
+         {
+         cout << "Opcion invalida." ;
+         getch();
+        	}
+    	} while (opcion != 5);
+		getch();
